@@ -43,14 +43,17 @@ class TextView extends StatelessWidget {
             child: ClipRRect(
               borderRadius:
                   BorderRadius.circular(textViewData.wholeViewRadius!),
-              child: Image.network(
+              child: 
+              textViewData.backgroundImageSrc!="" ? Image.network(
                 textViewData.backgroundImageSrc!,
                 fit: BoxFit.cover,
                 width: double.infinity,
                 // color: imageBackgroundColor,
-              ),
+              ) : Container(height: 120, color: containerColor,),
             ),
           ),
+
+
           Positioned(
               top: 0,
               bottom: 0,
